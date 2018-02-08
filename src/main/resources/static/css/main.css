@@ -1,0 +1,53 @@
+h1{
+    color: #6e8195;
+    font-size: 40px;
+}
+
+h2{
+    color: #c3d0ff;
+}
+
+div{
+    background-color: #c3d0ff;
+
+}
+
+.containerButtons{
+    background-color: #6e8195;
+    margin:auto;
+
+
+}
+.containerButtons:after{
+    content:' ';
+    display: block;
+    clear:both;
+
+}
+.naviButton{
+    width: 20%;
+    height: 30px;
+    text-align: center;
+    float:left;
+    margin:5px;
+    background-color: floralwhite;
+    font-size: 25px;
+}
+body{
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.centred{
+    height: 300px; width: 500px;
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
