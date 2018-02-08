@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css" />
+
+
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"/>
+
+<h1>Result</h1>
+<p th:text="'id: ' + ${product.id}"></p>
+<p th:text="'password: ' + ${product.price}"></p>
+<a href="/hello">Submit another message</a>
+
+<div th:replace="fragments/footer :: footer"/>
+</body>
+</html>
