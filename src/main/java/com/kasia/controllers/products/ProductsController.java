@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- * Created by kasia on 09.02.18.
- * 2
- */
-
 @Controller
 public class ProductsController {
 
