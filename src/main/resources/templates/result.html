@@ -15,9 +15,11 @@
 
 <h1>Result</h1>
 <p th:text="'id: ' + ${product.id}"></p>
-<p th:text="'password: ' + ${product.price}"></p>
-<a href="/hello">Submit another message</a>
+<p th:text="'price: ' + ${product.price}"></p>
+<p th:text="'type: ' + ${product.type}"></p>
 
-<div th:replace="fragments/footer :: footer"/>
+<a href="/product">Submit another message</a>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
