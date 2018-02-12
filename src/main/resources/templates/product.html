@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
 <link rel="stylesheet" th:href="@{/css/main.css}"
       href="../../css/main.css"/>
 
-<div th:replace="fragments/header :: header"></div>
 
+
+    <body>
+    <section layout:fragment="content">
 
 <div class="centred">
-    <h1>Add new product</h1>
+    <h1 id="titleForm">Add new product</h1>
 
     <form action="#" th:action="@{/product}" th:object="${product}" method="post">
-        <table>
+        <table id="addForm">
             <tr>
-                <td th:text="#{product.id}"></td>
-                <td>
-                    <input type="text" th:field="*{id}"/>
+                <td>Id: </td>
+                <td align="left">
+                    <input type="text" th:field="*{sn}"/>
                 </td>
             </tr>
             <tr>
-                <td th:text="#{product.price}"></td>
-                <td>
+                <td>Carat:</td>
+                <td align="left">
+                    <input type="text" th:field="*{carat}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td align="left">
                     <input type="text" th:field="*{price}"/>
                 </td>
             </tr>
             <tr>
-                <td th:text="#{product.type}"></td>
-                <td>
+                <td>Type: </td>
+                <td align="left">
                     <select th:field="*{type}">
                         <option th:each="type : ${T(com.kasia.domain.products.ProductType).values()}"
                                 th:value="${type}"
@@ -36,25 +46,26 @@
                 </td>
             </tr>
             <tr>
-                <td th:text="#{product.clarity}"></td>
-                <td>
-                    <label>
-                        <input type="radio" th:field="*{clarity}" value="fl"/>
-                        FL
-                    </label>
-
-                    <input type="radio" th:field="*{clarity}" value="if" />
+            <td valign="top" rowspan="6">Clarity: </td>
+                <td align="left">
+                    <label><input type="radio" th:field="*{clarity}" value="fl"/>FL</label></td></tr>
 
 
-                    <input type="radio" th:field="*{clarity}" value="vvs"/><label>VVS</label>
-                    <input type="radio" th:field="*{clarity}" value="vs"/><label>VS</label>
-                    <input type="radio" th:field="*{clarity}" value="si"/><label>SI</label>
-                    <input type="radio" th:field="*{clarity}" value="i"/><label>I</label>
+            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="IF" />IF</label></td></tr>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
+
+            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="VVS"/>VVS</label></td></tr>
+
+            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="VS"/>VS</label></td></tr>
+
+            <tr><td align="left"> <label><input type="radio" th:field="*{clarity}" value="SI"/>SI</label></td></tr>
+
+            <tr><td align="left"> <label><input type="radio" th:field="*{clarity}" value="I"/>I</label></td></tr>
+
+
+
+            <tr align="right">
+                <td colspan="2" align="right">
                     <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
                 </td>
             </tr>
@@ -62,8 +73,9 @@
         </table>
     </form>
 </div>
+    </section>
+    </body>
 
-<div th:replace="fragments/footer :: footer"></div>
 
 
 </html>
