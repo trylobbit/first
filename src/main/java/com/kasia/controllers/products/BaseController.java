@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class ProductsController {
+public class BaseController {
 
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("/product")
-    public String productForm(Model model) {
-        model.addAttribute("product", new Product());
-        return "product";
+    @GetMapping("/base")
+    public String viewBase(Model model) {
+        Iterable<Product> allProducts = productRepository.findAll();
+        model.addAttribute("products", allProducts);
+
+        return "base";
     }
 
-    @PostMapping("/product")
-    public String productSubmit(@ModelAttribute Product product) {
-        productRepository.save(product);
-        return "result";
+    @PostMapping("/base")
+    public String productDelete(@ModelAttribute Product product) {
+        productRepository.delete(product);
+        return "base";
     }
 }

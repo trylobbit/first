@@ -1,22 +1,21 @@
 h1{
-    color: #6e8195;
+    color: #99a1a9;
     font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2{
-    color: #c3d0ff;
+    color: #dce5eb;
 }
 
 div{
-    background-color: #c3d0ff;
+    background-color: #f5f5f5;
 
 }
 
 .containerButtons{
-    background-color: #6e8195;
+    background-color: #65717a;
     margin:auto;
-
-
 }
 .containerButtons:after{
     content:' ';
@@ -25,14 +24,30 @@ div{
 
 }
 .naviButton{
-    width: 20%;
-    height: 30px;
-    text-align: center;
+    width: 15%;
+    height: 35px;
     float:left;
     margin:5px;
-    background-color: floralwhite;
-    font-size: 25px;
+    background-color: rgba(146, 152, 154, 0.78);
+    color: #cfd3d6;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
 }
+.naviButton:hover{
+    background-color: #303233;
+}
+.naviButton a{
+    padding: 5px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+.naviButton a:hover {
+    color: darkgoldenrod;
+}
+
 body{
     min-height: 100%;
     margin: 0;
@@ -40,9 +55,10 @@ body{
 }
 
 .centred{
-    height: 300px; width: 500px;
+    height: auto; width: 500px;
     margin-left: auto; margin-right: auto;
     text-align: center;
+
 }
 
 footer{
@@ -50,4 +66,64 @@ footer{
     bottom: 0;
     text-align: center;
     width: 100%;
+    height: 40px;
+    color: darkgoldenrod;
+}
+footer p{
+    margin:0;
+    padding-bottom:2px;
+}
+td{
+    width: 100%;
+    padding-left: 10px;
+}
+form{
+    width: 60%;
+    margin:auto;
+}
+#titleForm{
+    text-align: center;
+}
+#result{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 400px;
+
+}
+#allProducts{
+    width:100%;
+    text-align: center;
+    font-family: sans-serif;
+}
+#allProducts td{
+    width:25%;
+    border: 2px solid white;
+    background-color: white;
+}
+#allProducts th{
+    font-size: 15px;
+    color: darkgoldenrod;
+}
+#addLink{
+    text-decoration: none;
+    color: #65717a;
+    padding-bottom: 0;
+}
+#addForm{
+    font-family: 'Montserrat', sans-serif;
+}
+#resultConteiner{
+    text-align: left;
+    width:400px;
+    margin:auto;
+    font-size: 16px;
+    line-height: 0;
+
+}
+#delete{
+    color: #99a1a9;
+    background-color: #f5f5f5;
+    border: 4px solid #cfd3d6;
+    width: 10px;
+
 }

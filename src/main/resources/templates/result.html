@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
 <link rel="stylesheet" th:href="@{/css/main.css}"
       href="../../css/main.css" />
 
@@ -10,16 +11,27 @@
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
+
 <body>
-<div th:replace="fragments/header :: header"/>
+<section layout:fragment="content">
+<div id="result">
 
-<h1>Result</h1>
-<p th:text="'id: ' + ${product.id}"></p>
-<p th:text="'price: ' + ${product.price}"></p>
-<p th:text="'type: ' + ${product.type}"></p>
+<h1>Product added:</h1>
+    <div id="resultConteiner">
+<table>
+    <tr><td><p th:text="'type:'"></p></td><td><p th:text="${product.type}"></p></td></tr>
+    <tr><td><p th:text="'type:'"></p></td><td><p th:text="${product.carat}"></p></td></tr>
+    <tr><td><p th:text="'id:'"></p></td><td><p th:text="${product.sn}"></p></td></tr>
+    <tr><td><p th:text="'price:'"></p></td><td><p th:text="${product.price}"></p></td></tr>
+    <tr><td><p th:text="'clarity:'"></p></td><td><p th:text="${product.clarity}"></p></td></tr>
+<!--<p th:text="'price: ' + ${product.price}"></p>-->
+<!--<p th:text="'type: ' + ${product.type}"></p>-->
+<!--<p th:text="'clarity:' + ${product.clarity}"></p>-->
+</table>
+    </div>
+   <p><a href="/product" id="addLink">Add next product</a></p>
 
-<a href="/product">Submit another message</a>
-
-<div th:replace="fragments/footer :: footer"></div>
+</div>
+</section>
 </body>
 </html>

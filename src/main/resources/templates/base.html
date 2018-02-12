@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css"/>
+
+
+<body>
+<section layout:fragment="content">
+    <div class="centred">
+        <h1>List of all products</h1>
+        <table id="allProducts">
+            <tr>
+                <th></th>
+                <th>TYPE</th>
+                <th>CARAT</th>
+                <th>ID</th>
+                <th>PRICE</th>
+                <th>CLARITY</th>
+
+            </tr>
+
+
+            <tr th:each="product : ${products}">
+                <td id="delete"><form action="#" th:action="@{/base}" th:object="${product}" method="post">x</form></td>
+                <td th:text="${product.type}">
+                </td>
+                <td th:text="${product.carat}">
+                </td>
+                <td th:text="${product.sn}">
+                </td>
+                <td th:text="${product.price}">
+                </td>
+                <td th:text="${product.clarity}">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</section>
+</body>
+
+</html>
