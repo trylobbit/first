@@ -15,13 +15,13 @@ public class ProductsController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("/product")
-    public String productForm(Model model) {
+    @GetMapping("/add-product")
+    public String newProductForm(Model model) {
         model.addAttribute("product", new Product());
         return "product";
     }
 
-    @PostMapping("/product")
+    @PostMapping("/add-product")
     public String productSubmit(@ModelAttribute Product product) {
         productRepository.save(product);
         return "result";

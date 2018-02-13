@@ -5,9 +5,7 @@ import com.kasia.domain.products.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BaseController {
@@ -23,9 +21,9 @@ public class BaseController {
         return "base";
     }
 
-    @PostMapping("/base")
-    public String productDelete(@ModelAttribute Product product) {
-        productRepository.delete(product);
-        return "base";
+    @RequestMapping(value="/delete-product-by-id", method= RequestMethod.POST)
+    public String deleteProduct(@RequestParam long id) {
+        productRepository.deleteById(id);
+        return "redirect:/base";
     }
 }
