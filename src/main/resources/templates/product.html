@@ -7,14 +7,13 @@
       href="../../css/main.css"/>
 
 
-
     <body>
     <section layout:fragment="content">
 
 <div class="centred">
     <h1 id="titleForm">Add new product</h1>
 
-    <form action="#" th:action="@{/product}" th:object="${product}" method="post">
+    <form action="#" th:action="@{/add-product}" th:object="${product}" method="post">
         <table id="addForm">
             <tr>
                 <td>Id: </td>
