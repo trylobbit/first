@@ -2,15 +2,16 @@ package com.kasia;
 
 import com.kasia.domain.products.Product;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface ProductRepository extends CrudRepository<Product, Long>
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long> {
 
-{
-    public void deleteById(long id);
-    public void addProduct(Product product);
-    public void updateProduct(Product product);
+    void deleteById(long id);
+
+//    void updateProduct(Product product);
 
 }

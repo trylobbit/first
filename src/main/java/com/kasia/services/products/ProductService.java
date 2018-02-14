@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ProductService {
 
-    public void deleteById(long id);
-    public void addProduct(Product product);
-    public void updateProduct(Product product);
+    void deleteById(long id);
+    void addProduct(Product product);
+    void updateProduct(Product product);
 
 }
