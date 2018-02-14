@@ -7,7 +7,12 @@ h1{
 h2{
     color: #dce5eb;
 }
-
+#label{
+    font-family: Niconne;
+    font-size: 180px;
+    color:#805f0a;
+    text-align: center;
+}
 div{
     background-color: #f5f5f5;
 
@@ -109,6 +114,7 @@ form{
     color: #65717a;
     padding-bottom: 0;
 }
+
 #addForm{
     font-family: 'Montserrat', sans-serif;
 }
