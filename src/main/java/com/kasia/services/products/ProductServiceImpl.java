@@ -24,8 +24,10 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-    public Page<Product> getProductList(Integer pageNumber, Integer pageSize) {
-        PageRequest request = new PageRequest(pageNumber, pageSize);
+    public Page<Product> getProductList(Integer pageNumber, Integer pageSize, String property, String direction) {
+        Sort sorting = new Sort(Sort.Direction.fromString(direction), property);
+
+        PageRequest request = new PageRequest(pageNumber, pageSize, sorting);
 
         return productRepository.findAll(request);
 

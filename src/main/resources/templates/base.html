@@ -10,6 +10,7 @@
 
 <body>
 <section layout:fragment="content">
+
     <div class="centred">
         <h1>List of all products</h1>
         <table id="allProducts">
@@ -18,7 +19,7 @@
                 <th>TYPE</th>
                 <th>CARAT</th>
                 <th>ID</th>
-                <th>PRICE</th>
+                <th><a th:href="|?sort=price|" th:name="price" th:text="price" th:value="price"></a>PRICE</th>
                 <th>CLARITY</th>
 
             </tr>
@@ -45,7 +46,6 @@
                 </td>
             </tr>
         </table>
-        <!--dssadsdsafsffsfsfsdfsdfdssadsdsafsffsfsfsdfsdfdssadsdsafsffsfsfsdfsdf-->
 
       <div>
             <ul class="pagination">
