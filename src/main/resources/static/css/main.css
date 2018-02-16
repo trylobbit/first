@@ -145,3 +145,12 @@ form{
 .iconButton:hover {
     background-color: #805f0a;
 }
+.pagination{
+    list-style-type: none;
+    text-decoration: none;
+
+
+}
+.pagination li{
+    display: inline;
+}
