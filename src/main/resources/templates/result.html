@@ -16,7 +16,7 @@
 <section layout:fragment="content">
 <div id="result">
 
-<h1>Product added:</h1>
+    <div id="resulTitle"><h1><i class="material-icons" id="addedIcon">done</i>Product added:</h1></div>
     <div id="resultConteiner">
 <table>
     <tr><td><p th:text="'type:'"></p></td><td><p th:text="${product.type}"></p></td></tr>
@@ -28,7 +28,7 @@
 <!--<p th:text="'type: ' + ${product.type}"></p>-->
 <!--<p th:text="'clarity:' + ${product.clarity}"></p>-->
 </table>
-    </div><p><a href="/add-product" id="addLink">Add next product</a></p>
+    </div><p><a href="/add-product" id="addLink"><i class="material-icons" id="addIcon">add</i>Add next product</a></p>
 
 </div>
 </section>

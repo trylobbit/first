@@ -17,7 +17,7 @@ public class BaseController {
     @GetMapping("/base")
     public String viewBase(@RequestParam(value = "page", required = false, defaultValue = "0") Integer page, Model model) {
 
-        Page<Product> allProducts = productService.getProductList(page, 10);
+        Page<Product> allProducts = productService.getProductList(page, 5);
         model.addAttribute("products", allProducts.getContent());
         model.addAttribute("pages", allProducts.getTotalPages());
         model.addAttribute("actualPage", allProducts.getNumber());
