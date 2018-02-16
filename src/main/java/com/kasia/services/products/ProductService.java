@@ -9,6 +9,7 @@ public interface ProductService {
 
     void addProduct(Product product);
 
-    Page<Product> getProductList(Integer pageNumber, Integer pageSize);
+    Page<Product> getProductList(Integer pageNumber, Integer pageSize,String property, String direction);
+
 
 }
