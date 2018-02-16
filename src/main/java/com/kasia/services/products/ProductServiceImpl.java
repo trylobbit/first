@@ -3,6 +3,9 @@ package com.kasia.services.products;
 import com.kasia.ProductRepository;
 import com.kasia.domain.products.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +24,11 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-    public void updateProduct(Product product) {
-//        productRepository.updateProduct(product);
+    public Page<Product> getProductList(Integer pageNumber, Integer pageSize) {
+        PageRequest request = new PageRequest(pageNumber, pageSize);
+
+        return productRepository.findAll(request);
+
     }
 
 }

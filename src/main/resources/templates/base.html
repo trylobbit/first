@@ -45,6 +45,19 @@
                 </td>
             </tr>
         </table>
+      <div>
+            <ul class="pagination">
+                        <li th:each="number : ${#numbers.sequence(0, pages-1)}">
+
+                            <th:block th:with="isDisabled=${actualPage} != ${number}">
+                                <a th:if = "${isDisabled}" th:href="|?page=${number}|" th:name="number" th:text="${number+1}"></a>
+                                <a th:unless="${isDisabled}" th:name="number" th:text="${number+1}"></a>
+                            </th:block>
+
+                        </li>
+
+            </ul>
+        </div>
     </div>
 
 
