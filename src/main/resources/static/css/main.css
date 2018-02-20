@@ -60,7 +60,7 @@ body{
 }
 
 .centred{
-    height: auto; width: 500px;
+    height: auto; width: 600px;
     margin-left: auto; margin-right: auto;
     text-align: center;
 
@@ -98,17 +98,26 @@ form{
 #allProducts{
     width:100%;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .data{
-    width:25%;
+    width:auto;
     border: 2px solid white;
     background-color: white;
 }
-#allProducts th{
+.allProducts a{
     font-size: 15px;
     color: darkgoldenrod;
+    text-decoration: none;font-family: 'Montserrat', sans-serif;
+
 }
+.allProducts{
+    font-size: 15px;
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
 #addLink{
     text-decoration: none;
     color: #65717a;
@@ -179,4 +188,20 @@ i{
     vertical-align: sub;
     padding-right: 10px;
     font-size: 20px;
+}
+.PriceRange p{
+    display: inline;
+    color: #65717a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+.PriceRange button{
+     color: #65717a;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 13px;
+ }
+
+.RangeInput{
+    width: 50px;
+    margin: 5px;
 }

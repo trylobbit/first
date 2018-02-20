@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css"/>
+<body>
+<section layout:fragment="content">
+
+    <div class="centred">
+        <h1>Average price of all types products</h1>
+
+        <table>
+            <tr>
+
+                <th class="allProducts">TYPE</th>
+                <th class="allProducts">AVERAGE PRICE</th>
+
+            </tr>
+
+
+            <tr th:each="iter : ${averagePrice}">
+                <td th:text="${iter.key}">keyvalue</td>
+                <td th:text="${iter.value}">num</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</section>
+</body>
+</html>
