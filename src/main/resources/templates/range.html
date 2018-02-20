@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css"/>
+<body>
+<section layout:fragment="content">
+
+    <div class="centred">
+        <h1>List of all products</h1>
+
+        <table>
+            <tr>
+
+                <th class="allProducts">TYPE</th>
+                <th class="allProducts"><a th:href="|?sort=carat|" th:name="carat" th:value="property">CARAT</a></th>
+                <th class="allProducts"><a th:href="|?sort=sn|" th:name="sn" th:value="property">ID</a></th>
+                <th class="allProducts"><a th:href="|?sort=price|" th:name="price" th:value="property">PRICE</a></th>
+                <th class="allProducts">CLARITY</th>
+
+            </tr>
+
+
+            <tr th:each="product : ${products}" id="allProducts">
+
+                <td class="data" th:text="${product.type}">
+                </td>
+                <td class="data" th:text="${product.carat}">
+                </td>
+                <td class="data" th:text="${product.sn}">
+                </td>
+                <td class="data" th:text="${product.price}">
+                </td>
+                <td class="data" th:text="${product.clarity}">
+                </td>
+            </tr>
+        </table>
+        <form class="PriceRange"  action="#" th:action="@{/range}"  method="get">
+        <p>Price range:</p><p><input  class="RangeInput" type="text"  name="downRange" th:value="*{downRange}"/></p>
+        <p>to:</p><p><input class="RangeInput" type="text"  name="upRange" th:value="*{upRange}" /></p>
+        <button  type="submit" name="Search" >Search </button>
+        </form>
+
+    </div>
+
+
+</section>
+</body>
+</html>

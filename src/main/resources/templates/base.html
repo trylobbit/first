@@ -7,33 +7,34 @@
       href="../../css/main.css"/>
 
 
-
 <body>
 <section layout:fragment="content">
 
     <div class="centred">
         <h1>List of all products</h1>
-        <table id="allProducts">
+        <table>
             <tr>
                 <th></th>
-                <th>TYPE</th>
-                <th>CARAT</th>
-                <th>ID</th>
-                <th><a th:href="|?sort=price|" th:name="price" th:text="price" th:value="price"></a>PRICE</th>
-                <th>CLARITY</th>
+                <th class="allProducts">TYPE</th>
+                <th class="allProducts"><a th:href="|?sort=carat|" th:name="carat" th:value="property">CARAT</a></th>
+                <th class="allProducts"><a th:href="|?sort=sn|" th:name="sn" th:value="property">ID</a></th>
+                <th class="allProducts"><a th:href="|?sort=price|" th:name="price" th:value="property">PRICE</a></th>
+                <th class="allProducts">CLARITY</th>
+                <th class="allProducts">DATE</th>
 
             </tr>
 
 
-            <tr th:each="product : ${products}">
-                <form  th:action="@{/delete-product-by-id}" th:object="${product}" method="post">
-                    <td id="delete"><button class="iconButton">
-                        <input type="hidden" th:name="id" th:value="*{id}">
-                        <i class="material-icons">cancel</i>
-                        </input>
-                    </button>
+            <tr th:each="product : ${products}" id="allProducts">
+                <form th:action="@{/delete-product-by-id}" th:object="${product}" method="post">
+                    <td id="delete">
+                        <button class="iconButton">
+                            <input type="hidden" th:name="id" th:value="*{id}">
+                            <i class="material-icons">cancel</i>
+                            </input>
+                        </button>
                     </td>
-               </form>
+                </form>
                 <td class="data" th:text="${product.type}">
                 </td>
                 <td class="data" th:text="${product.carat}">
@@ -44,38 +45,45 @@
                 </td>
                 <td class="data" th:text="${product.clarity}">
                 </td>
+                    <td class="data" th:text="${product.date}">
+                </td>
             </tr>
         </table>
 
-      <div>
+        <div>
             <ul class="pagination">
 
 
-                    <th:block th:with="leftIsDisabled=${actualPage} == 0">
-                        <li>
-                            <a th:if = "${leftIsDisabled}"></a>
-                    <a th:unless = "${leftIsDisabled}" th:href="|?page=${actualPage-1}|">
-                        <i class="material-icons">chevron_left</i></a>
-                </li>
+                <th:block th:with="leftIsDisabled=${actualPage} == 0">
+                    <li>
+                        <a th:if="${leftIsDisabled}"></a>
+                        <a th:unless="${leftIsDisabled}" th:href="|?page=${actualPage-1}|">
+                            <i class="material-icons">chevron_left</i></a>
+                    </li>
 
-                        <li th:each="number : ${#numbers.sequence(0, pages-1)}">
-                            <th:block th:with="isDisabled=${actualPage} != ${number}">
-                                <a th:if = "${isDisabled}" th:href="|?page=${number}|" th:name="number" th:text="${number+1}"></a>
-                                <a th:unless="${isDisabled}" th:name="number" th:text="${number+1}"></a>
-                            </th:block>
-
-                        </li>
-                        <th:block th:with="rightIsDisabled=${actualPage} == ${pages-1}">
-                <li>
-                    <a th:if = "${rightIsDisabled}"></a>
-                    <a th:unless="${rightIsDisabled}" th:href="|?page=${actualPage+1}|">
-                        <i class="material-icons">chevron_right</i></a>
-                </li>
+                    <li th:each="number : ${#numbers.sequence(0, pages-1)}">
+                        <th:block th:with="isDisabled=${actualPage} != ${number}">
+                            <a th:if="${isDisabled}" th:href="|?page=${number}|" th:name="number"
+                               th:text="${number+1}"></a>
+                            <a th:unless="${isDisabled}" th:name="number" th:text="${number+1}"></a>
                         </th:block>
+
+                    </li>
+                    <th:block th:with="rightIsDisabled=${actualPage} == ${pages-1}">
+                        <li>
+                            <a th:if="${rightIsDisabled}"></a>
+                            <a th:unless="${rightIsDisabled}" th:href="|?page=${actualPage+1}|">
+                                <i class="material-icons">chevron_right</i></a>
+                        </li>
                     </th:block>
+                </th:block>
 
             </ul>
         </div>
+        <form class="PriceRange"  action="#" th:action="@{/base}"  method="get">
+            <p>Select by Type:</p><p><input  class="RangeInput" type="text"  name="filterByType" th:value="*{filterByType}"/></p>
+            <button  type="submit" name="Search" >Search </button>
+        </form>
     </div>
 
 

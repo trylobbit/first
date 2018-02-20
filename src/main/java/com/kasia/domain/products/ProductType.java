@@ -7,7 +7,7 @@ public enum ProductType {
     private String name;
 
     ProductType(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getName() {
