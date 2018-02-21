@@ -46,7 +46,9 @@ public class BaseController {
 
     @RequestMapping(value = "/delete-product-by-id", method = RequestMethod.POST)
     public String deleteProduct(@RequestParam long id) {
-        productService.deleteById(id);
+        Product deleteProduct= productService.findById(id);
+        productService.decrementProductCounter(deleteProduct);
+//  productService.deleteById(id);
         return "redirect:/base";
     }
 

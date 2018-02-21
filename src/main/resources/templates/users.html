@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css"/>
+
+
+<body>
+<section layout:fragment="content">
+
+    <div class="centred">
+        <h1>List of all products</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th class="allProducts">Name</th>
+                <th class="allProducts">Last Name</th>
+                <th class="allProducts">Mail</th>
+                <th class="allProducts">Password</th>
+                <th class="allProducts">Country</th>
+                <th class="allProducts">City</th>
+                <th class="allProducts">Code</th>
+                <th class="allProducts">Street</th>
+                <th class="allProducts">Number</th>
+
+            </tr>
+
+
+            <tr th:each="user : ${users}" id="allProducts">
+
+                <td class="data" th:text="${user.name}"></td>
+                <td class="data" th:text="${user.lastName}"></td>
+                <td class="data" th:text="${user.mailAdress}"></td>
+                <td class="data" th:text="${user.password}"></td>
+                <td class="data" th:text="${adress.country}"></td>
+                <td class="data" th:text="${adress.city}"></td>
+                <td class="data" th:text="${adress.code}"></td>
+                <td class="data" th:text="${adress.street}"></td>
+                <td class="data" th:text="${adress.number}"></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+
+</section>
+</body>
+
+</html>

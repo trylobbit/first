@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css"/>
+
+
+<body>
+<section layout:fragment="content">
+
+    <div class="centred">
+        <h1 id="titleForm">Create user account:</h1>
+
+        <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+            <table id="addForm">
+                <tr class="userHeaderForm">
+                    <td>Personal data:</td>
+                <tr><td></td>
+                    <td>Name: </td>
+                    <td align="left"><input type="text" th:field="*{name}"/></td>
+                </tr></tr>
+                <tr><td></td>
+                    <td>Last name:</td>
+                    <td align="left"><input type="text" th:field="*{lastName}"/></td>
+                </tr>
+                <tr><td></td>
+                    <td>Mail adress: </td>
+                    <td align="left"><input type="email" th:field="*{mailAdress}"/></td>
+                </tr>
+                <tr><td></td>
+                    <td>Password: </td>
+                    <td align="left"><input type="text" th:field="*{password}"/></td>
+                </tr>
+
+                <th:block  th:object="${adress}" >
+                <tr class="userHeaderForm">
+                    <td>Adress:* </td>
+                <tr><td></td>
+                    <td>Country:</td>
+                    <td><input type="text" th:field="*{country}"/></td>
+                </tr>
+                <tr><td></td>
+                    <td>City:</td>
+                    <td><input type="text" th:field="*{city}"/></td>
+                </tr>
+                <tr> <td></td>
+                    <td>Code:</td>
+                    <td><input type="text" th:field="*{code}"/></td>
+                </tr>
+                <tr><td></td>
+                    <td>Street:</td>
+                    <td><input type="text" th:field="*{street}"/></td>
+                </tr>
+                    <tr><td></td>
+                        <td>Number:</td>
+                        <td><input type="number" th:field="*{houseNumber}"/></td> </tr>
+                </tr>
+                </th:block>
+                <tr align="right">
+                    <td></td><td colspan="2" align="right">
+                        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</section>
+</body>
+
+
+
+</html>

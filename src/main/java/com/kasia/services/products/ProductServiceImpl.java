@@ -30,7 +30,11 @@ public class ProductServiceImpl implements ProductService {
     public void deleteById(long id) {
         productRepository.deleteById(id);
     }
-    public Iterable<Product> findAll(){return productRepository.findAll();}
+    public Product findById(long id){return productRepository.findById(id);}
+
+    public Iterable<Product> findAll() {
+        return productRepository.findAll();
+    }
 
     public Page<Product> getProductList(Integer pageNumber, Integer pageSize, String property, String filter, String direction) {
         Page<Product> products;
@@ -47,13 +51,13 @@ public class ProductServiceImpl implements ProductService {
         return products;
     }
 
-    public  List<Product> getProductListPriceRange(Integer downRange, Integer upRange){
+    public List<Product> getProductListPriceRange(Integer downRange, Integer upRange) {
 
         Iterable<Product> products = productRepository.findAll();
         List<Product> productsPriceRange = new ArrayList<>();
 
-        for (Product product: products) {
-            if (downRange < product.getPrice() && upRange> product.getPrice() ){
+        for (Product product : products) {
+            if (downRange < product.getPrice() && upRange > product.getPrice()) {
                 productsPriceRange.add(product);
             }
 
@@ -61,15 +65,38 @@ public class ProductServiceImpl implements ProductService {
         return productsPriceRange;
     }
 
-//    private List<Product> filterProducts(List<Product> products, String filter) {
-//        List<Product> productsFiltered = new ArrayList<>();
-//        for (Product product : products) {
-//            if (product.getType() == ProductType.valueOf(filter)) {
-//                productsFiltered.add(product);
-//            }
-//        }
-//        return productsFiltered;
-//    }
+    public void saveProductOrAddNext(Product product) {
+        Iterable<Product> products = productRepository.findAll();
+        boolean exist = false;
+        for (Product productInBase : products) {
+            if (productInBase.equals(product)) {
+                Integer counter = productInBase.getProductCounter();
+                counter++;
+                productInBase.setProductCounter(counter);
+                exist= true;
+            }
+
+        }
+        if(!exist) {
+            product.setProductCounter(1);
+            productRepository.save(product);
+
+        }
 
 
+
+    }
+
+    public void decrementProductCounter(Product product) {
+        List<Product> soldOut = new ArrayList<>();
+        Integer counter = product.getProductCounter();
+        if (counter > 0) {
+            counter--;
+            product.setProductCounter(counter);
+        } else{
+            soldOut.add(product);
+            deleteById(product.getId());
+        }
+
+    }
 }

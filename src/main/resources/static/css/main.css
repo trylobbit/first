@@ -60,7 +60,7 @@ body{
 }
 
 .centred{
-    height: auto; width: 600px;
+    height: auto; width: 700px;
     margin-left: auto; margin-right: auto;
     text-align: center;
 
@@ -129,7 +129,7 @@ form{
 }
 #resultConteiner{
     text-align: left;
-    width:400px;
+    width:500px;
     margin:auto;
     font-size: 16px;
     line-height: 0;
@@ -204,4 +204,8 @@ i{
 .RangeInput{
     width: 50px;
     margin: 5px;
+}
+.userHeaderForm{
+    color:#6e8195;
+    border-bottom: 3px solid #6e8195;
 }
