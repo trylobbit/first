@@ -21,6 +21,7 @@
                 <th class="allProducts"><a th:href="|?sort=price|" th:name="price" th:value="property">PRICE</a></th>
                 <th class="allProducts">CLARITY</th>
                 <th class="allProducts">DATE</th>
+                <th class="allProducts">counter</th>
 
             </tr>
 
@@ -35,18 +36,13 @@
                         </button>
                     </td>
                 </form>
-                <td class="data" th:text="${product.type}">
-                </td>
-                <td class="data" th:text="${product.carat}">
-                </td>
-                <td class="data" th:text="${product.sn}">
-                </td>
-                <td class="data" th:text="${product.price}">
-                </td>
-                <td class="data" th:text="${product.clarity}">
-                </td>
-                    <td class="data" th:text="${product.date}">
-                </td>
+                <td class="data" th:text="${product.type}"></td>
+                <td class="data" th:text="${product.carat}"></td>
+                <td class="data" th:text="${product.sn}"></td>
+                <td class="data" th:text="${product.price}"></td>
+                <td class="data" th:text="${product.clarity}"></td>
+                <td class="data" th:text="${product.date}"></td>
+                <td class="data" th:text="${product.productCounter}"></td>
             </tr>
         </table>
 

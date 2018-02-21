@@ -9,8 +9,11 @@ import java.util.List;
 public interface ProductService {
 
     void deleteById(long id);
+    Product findById(long id);
 
     void addProduct(Product product);
+
+    void saveProductOrAddNext(Product product);
 
     Page<Product> getProductList(Integer pageNumber, Integer pageSize, String property, String filterByType, String direction);
 
@@ -19,4 +22,7 @@ public interface ProductService {
 
 
     Iterable<Product> findAll();
+
+
+ void decrementProductCounter(Product product);
 }

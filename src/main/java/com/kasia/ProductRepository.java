@@ -16,8 +16,14 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, L
 
 
     void deleteById(long id);
-
+    Product findById(long id);
     Page<Product> findByType(ProductType type, Pageable pageable);
+
+
+
+
+
+
 }
 
 
