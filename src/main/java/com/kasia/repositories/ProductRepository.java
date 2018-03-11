@@ -1,4 +1,4 @@
-package com.kasia;
+package com.kasia.repositories;
 
 import com.kasia.domain.products.Product;
 import com.kasia.domain.products.ProductType;
@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
@@ -16,12 +14,10 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, L
 
 
     void deleteById(long id);
+
     Product findById(long id);
+
     Page<Product> findByType(ProductType type, Pageable pageable);
-
-
-
-
 
 
 }

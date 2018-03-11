@@ -7,55 +7,56 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 @Transactional
-public class StatisticsServiceImpl implements StatisticsService{
+public class StatisticsServiceImpl implements StatisticsService {
 
     @Autowired
     private ProductService productService;
 
-    public Map<String, Double> averagePriceMap() {
+    public Map<String, BigDecimal> averagePriceMap() {
 
 
-        Map<String, Double> averagePrice = new HashMap<>();
+        Map<String, BigDecimal> averagePrice = new HashMap<>();
 
-        double sumValueDiament = 0;
+        BigDecimal sumValueDiament = BigDecimal.ZERO;
         Integer diamentCounter = 0;
-        double sumValueSzmaragd = 0;
+        BigDecimal sumValueSzmaragd = BigDecimal.ZERO;
         Integer szmaragdCounter = 0;
-        double sumValueSzafir = 0;
+        BigDecimal sumValueSzafir = BigDecimal.ZERO;
         Integer szafirCounter = 0;
 
 
         for (Product product : productService.findAll())
             if (product.getType() == ProductType.DIAMENT) {
                 diamentCounter++;
-                sumValueDiament = sumValueDiament + product.getPrice();
+                sumValueDiament = sumValueDiament.add(product.getPrice());
             } else if (product.getType() == ProductType.SZMARAGD) {
                 szmaragdCounter++;
-                sumValueSzmaragd = sumValueSzmaragd + product.getPrice();
+                sumValueSzmaragd = sumValueSzmaragd.add(product.getPrice());
 
             } else if (product.getType() == ProductType.SZAFIR) {
                 szafirCounter++;
-                sumValueSzafir = sumValueSzafir + product.getPrice();
+                sumValueSzafir = sumValueSzafir.add(product.getPrice());
 
             }
 
 
-        Double averagePriceDiament = sumValueDiament / diamentCounter;
-        Double averagePriceSzmaragd = sumValueSzmaragd / szmaragdCounter;
-        Double averagePriceSzafir = sumValueSzafir / szafirCounter;
+        BigDecimal averagePriceDiament = sumValueDiament.divide(BigDecimal.valueOf(diamentCounter), 2, RoundingMode.CEILING);
+        BigDecimal averagePriceSzmaragd = sumValueSzmaragd.divide(BigDecimal.valueOf(szmaragdCounter), 2, RoundingMode.CEILING);
+        BigDecimal averagePriceSzafir = sumValueSzafir.divide(BigDecimal.valueOf(szafirCounter), 2, RoundingMode.CEILING);
 
         averagePrice.put("DIAMENT", averagePriceDiament);
         averagePrice.put("SZMARAGD", averagePriceSzmaragd);
         averagePrice.put("SZAFIR", averagePriceSzafir);
 
-        return  averagePrice;
+        return averagePrice;
     }
-
 
 
 }

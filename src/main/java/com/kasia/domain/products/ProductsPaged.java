@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ProductsPaged {
 
-    private List <Product> products;
+    private List<Product> products;
 
     private Integer totalPages;
 

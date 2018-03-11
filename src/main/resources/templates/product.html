@@ -7,74 +7,83 @@
       href="../../css/main.css"/>
 
 
-    <body>
-    <section layout:fragment="content">
+<body>
+<section layout:fragment="content">
 
-<div class="centred">
-    <h1 id="titleForm">Add new product</h1>
+    <div class="centred">
+        <h1 id="titleForm">Add new product</h1>
 
-    <form action="#" th:action="@{/add-product}" th:object="${product}" method="post">
-        <table id="addForm">
-            <tr>
-                <td>Id: </td>
-                <td align="left">
-                    <input type="text" th:field="*{sn}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>Carat:</td>
-                <td align="left">
-                    <input type="text" th:field="*{carat}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>Price: </td>
-                <td align="left">
-                    <input type="text" th:field="*{price}"/>
-                </td>
-            </tr>
-            <tr>
-                <td>Type: </td>
-                <td align="left">
-                    <select th:field="*{type}">
-                        <option th:each="type : ${T(com.kasia.domain.products.ProductType).values()}"
-                                th:value="${type}"
-                                th:text="${type}">Type
-                        </option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-            <td valign="top" rowspan="6">Clarity: </td>
-                <td align="left">
-                    <label><input type="radio" th:field="*{clarity}" value="fl"/>FL</label></td></tr>
-
-
-            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="IF" />IF</label></td></tr>
+        <form action="#" th:action="@{/add-product}" th:object="${product}" method="post">
+            <table id="addForm">
+                <tr>
+                    <td>Id:</td>
+                    <td align="left">
+                        <input type="text" th:field="*{sn}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Carat:</td>
+                    <td align="left">
+                        <input type="text" th:field="*{carat}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td align="left">
+                        <input type="text" th:field="*{price}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type:</td>
+                    <td align="left">
+                        <select th:field="*{type}">
+                            <option th:each="type : ${T(com.kasia.domain.products.ProductType).values()}"
+                                    th:value="${type}"
+                                    th:text="${type}">Type
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" rowspan="6">Clarity:</td>
+                    <td align="left">
+                        <label><input type="radio" th:field="*{clarity}" value="fl"/>FL</label></td>
+                </tr>
 
 
-            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="VVS"/>VVS</label></td></tr>
-
-            <tr><td align="left"><label><input type="radio" th:field="*{clarity}" value="VS"/>VS</label></td></tr>
-
-            <tr><td align="left"> <label><input type="radio" th:field="*{clarity}" value="SI"/>SI</label></td></tr>
-
-            <tr><td align="left"> <label><input type="radio" th:field="*{clarity}" value="I"/>I</label></td></tr>
+                <tr>
+                    <td align="left"><label><input type="radio" th:field="*{clarity}" value="IF"/>IF</label></td>
+                </tr>
 
 
+                <tr>
+                    <td align="left"><label><input type="radio" th:field="*{clarity}" value="VVS"/>VVS</label></td>
+                </tr>
 
-            <tr align="right">
-                <td colspan="2" align="right">
-                    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-                </td>
-            </tr>
+                <tr>
+                    <td align="left"><label><input type="radio" th:field="*{clarity}" value="VS"/>VS</label></td>
+                </tr>
 
-        </table>
-    </form>
-</div>
-    </section>
-    </body>
+                <tr>
+                    <td align="left"><label><input type="radio" th:field="*{clarity}" value="SI"/>SI</label></td>
+                </tr>
 
+                <tr>
+                    <td align="left"><label><input type="radio" th:field="*{clarity}" value="I"/>I</label></td>
+                </tr>
+
+
+                <tr align="right">
+                    <td colspan="2" align="right">
+                        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</section>
+</body>
 
 
 </html>

@@ -13,7 +13,7 @@ public class StatisticsController {
     @Autowired
     private StatisticsService statisticsService;
 
-    @GetMapping ("/map")
+    @GetMapping("/map")
     public String viewMap(Model model) {
         model.addAttribute("averagePrice", statisticsService.averagePriceMap());
         return "statistics";

@@ -10,11 +10,11 @@
 <body>
 <section layout:fragment="content">
 
-    <div class="centred">
-        <h1>List of all products</h1>
+    <div class="usersList">
+        <h1>List of all users</h1>
         <table>
             <tr>
-                <th></th>
+
                 <th class="allProducts">Name</th>
                 <th class="allProducts">Last Name</th>
                 <th class="allProducts">Mail</th>
@@ -34,14 +34,13 @@
                 <td class="data" th:text="${user.lastName}"></td>
                 <td class="data" th:text="${user.mailAdress}"></td>
                 <td class="data" th:text="${user.password}"></td>
-                <td class="data" th:text="${adress.country}"></td>
-                <td class="data" th:text="${adress.city}"></td>
-                <td class="data" th:text="${adress.code}"></td>
-                <td class="data" th:text="${adress.street}"></td>
-                <td class="data" th:text="${adress.number}"></td>
+                <td class="data" th:text="${user.adress.country}"></td>
+                <td class="data" th:text="${user.adress.city}"></td>
+                <td class="data" th:text="${user.adress.postCode}"></td>
+                <td class="data" th:text="${user.adress.street}"></td>
+                <td class="data" th:text="${user.adress.houseNumber}"></td>
             </tr>
         </table>
-
 
 
     </div>
