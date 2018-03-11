@@ -17,59 +17,80 @@
             <table id="addForm">
                 <tr class="userHeaderForm">
                     <td>Personal data:</td>
-                <tr><td></td>
-                    <td>Name: </td>
+                <tr>
+                    <td></td>
+                    <td>Name:</td>
                     <td align="left"><input type="text" th:field="*{name}"/></td>
-                </tr></tr>
-                <tr><td></td>
+                    <td class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td></td>
                     <td>Last name:</td>
                     <td align="left"><input type="text" th:field="*{lastName}"/></td>
+                    <td class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last name error
+                    </td>
                 </tr>
-                <tr><td></td>
-                    <td>Mail adress: </td>
+                <tr>
+                    <td></td>
+                    <td>Mail adress:</td>
                     <td align="left"><input type="email" th:field="*{mailAdress}"/></td>
+                    <td class="error" th:if="${#fields.hasErrors('mailAdress')}" th:errors="*{mailAdress}">Mail error
+                    </td>
                 </tr>
-                <tr><td></td>
-                    <td>Password: </td>
-                    <td align="left"><input type="text" th:field="*{password}"/></td>
-                </tr>
-
-                <th:block  th:object="${adress}" >
-                <tr class="userHeaderForm">
-                    <td>Adress:* </td>
-                <tr><td></td>
-                    <td>Country:</td>
-                    <td><input type="text" th:field="*{country}"/></td>
-                </tr>
-                <tr><td></td>
-                    <td>City:</td>
-                    <td><input type="text" th:field="*{city}"/></td>
-                </tr>
-                <tr> <td></td>
-                    <td>Code:</td>
-                    <td><input type="text" th:field="*{code}"/></td>
-                </tr>
-                <tr><td></td>
-                    <td>Street:</td>
-                    <td><input type="text" th:field="*{street}"/></td>
-                </tr>
-                    <tr><td></td>
-                        <td>Number:</td>
-                        <td><input type="number" th:field="*{houseNumber}"/></td> </tr>
-                </tr>
-                </th:block>
-                <tr align="right">
-                    <td></td><td colspan="2" align="right">
-                        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+                <tr>
+                    <td></td>
+                    <td>Password:</td>
+                    <td align="left"><input type="password" th:field="*{password}"/></td>
+                    <td class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error
                     </td>
                 </tr>
 
+                <form action="#" th:action="@{/user}" th:object="${adress}" method="post">
+                    <tr class="userHeaderForm">
+                        <td>Adress:*</td>
+                    <tr>
+                        <td></td>
+                        <td>Country:</td>
+                        <td><input type="text" th:field="*{country}"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>City:</td>
+                        <td><input type="text" th:field="*{city}"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Code:</td>
+                        <td><input type="text" th:field="*{postCode}"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Street:</td>
+                        <td><input type="text" th:field="*{street}"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Number:</td>
+                        <td><input type="number" th:field="*{houseNumber}"/></td>
+                    </tr>
+                    </tr>
+                    <tr align="right">
+                        <td></td>
+                        <td colspan="2" align="right">
+                            <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+
+                        </td>
+
+                    </tr>
+
+                </form>
+                <div class="errorMessage" th:text="${message}"></div>
             </table>
         </form>
     </div>
 </section>
 </body>
-
 
 
 </html>

@@ -1,22 +1,46 @@
 package com.kasia.domain.products;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "adress")
 
 public class Adress {
+
+
+    private Integer id;
+    @Column(name = "country")
     private String country;
+    @Column(name = "city")
     private String city;
-    private String code;
+    @Column(name = "post_code")
+    private String postCode;
+    @Column(name = "street")
     private String street;
+    @Column(name = "house_number")
     private Integer houseNumber;
 
-    public Adress(String country, String city, String code, String street, Integer houseNumber) {
-        this.country = country;
-        this.city = city;
-        this.code = code;
-        this.street = street;
-        this.houseNumber = houseNumber;
+    public Adress() {
     }
 
-    public Adress(){}
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Adress(Integer id, String country, String city, String postCode, String street, Integer houseNumber) {
+        this.country = country;
+        this.city = city;
+        this.postCode = postCode;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.id = id;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Integer getId() {
+        return id;
+    }
 
     public String getCountry() {
         return country;
@@ -26,8 +50,8 @@ public class Adress {
         return city;
     }
 
-    public String getCode() {
-        return code;
+    public String getPostCode() {
+        return postCode;
     }
 
     public String getStreet() {
@@ -46,8 +70,8 @@ public class Adress {
         this.city = city;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
     }
 
     public void setStreet(String street) {

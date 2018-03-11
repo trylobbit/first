@@ -1,72 +1,81 @@
-h1{
+h1 {
     color: #99a1a9;
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
 }
 
-h2{
+h2 {
     color: #dce5eb;
 }
-#label{
+
+#label {
     font-family: Niconne;
     font-size: 180px;
-    color:#805f0a;
+    color: #805f0a;
     text-align: center;
 }
-div{
+
+div {
     background-color: #f5f5f5;
 
 }
 
-.containerButtons{
+.containerButtons {
     background-color: #65717a;
-    margin:auto;
+    margin: auto;
 }
-.containerButtons:after{
-    content:' ';
+
+.containerButtons:after {
+    content: ' ';
     display: block;
-    clear:both;
+    clear: both;
 
 }
-.naviButton{
+
+.naviButton {
     width: 15%;
     height: 35px;
-    float:left;
-    margin:5px;
+    float: left;
+    margin: 5px;
     background-color: rgba(146, 152, 154, 0.78);
     color: #cfd3d6;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
 }
-.naviButton:hover{
+
+.naviButton:hover {
     background-color: #303233;
 }
-.naviButton a{
+
+.naviButton a {
     padding: 5px;
     text-decoration: none;
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
 }
+
 .naviButton a:hover {
     color: darkgoldenrod;
 }
 
-body{
+body {
     min-height: 100%;
     margin: 0;
     padding: 0;
 }
 
-.centred{
-    height: auto; width: 700px;
-    margin-left: auto; margin-right: auto;
+.centred {
+    height: auto;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 0;
     text-align: center;
@@ -74,68 +83,94 @@ footer{
     height: 40px;
     color: darkgoldenrod;
 }
-footer p{
-    margin:0;
-    padding-bottom:2px;
+
+footer p {
+    margin: 0;
+    padding-bottom: 2px;
 }
-td{
-    width: 100%;
+
+td {
     padding-left: 10px;
 }
-form{
-    width: 60%;
-    margin:auto;
+
+form {
+    width: 90%;
+    margin: auto;
 }
-#titleForm{
+
+#titleForm {
     text-align: center;
 }
-#result{
+
+#result {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     height: 400px;
 
 }
-#allProducts{
-    width:100%;
+
+#allProducts {
+    width: 100%;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
-.data{
-    width:auto;
+
+.data {
+    width: auto;
     border: 2px solid white;
     background-color: white;
 }
-.allProducts a{
+
+.allProducts a {
     font-size: 15px;
     color: darkgoldenrod;
-    text-decoration: none;font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 
 }
-.allProducts{
+
+.allProducts {
     font-size: 15px;
     color: darkgoldenrod;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
 }
 
-#addLink{
+#addLink {
     text-decoration: none;
     color: #65717a;
     padding-bottom: 0;
 }
 
-#addForm{
+#addForm {
     font-family: 'Montserrat', sans-serif;
-}
-#resultConteiner{
+    width: 50%;
     text-align: left;
-    width:500px;
-    margin:auto;
+    margin: auto;
+}
+
+#loginForm {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    text-align: right;
+}
+
+#logBox {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#resultConteiner {
+    text-align: left;
+    width: 20%;
+    margin: auto;
     font-size: 16px;
     line-height: 0;
 
 }
-#delete{
+
+#delete {
     color: #cfd3d6;
     width: 10px;
     padding-left: 0;
@@ -147,65 +182,101 @@ form{
     color: #cfd3d6; /* White text */
     font-size: 16px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
-    width:auto;
+    width: auto;
 }
 
 /* Darker background on mouse-over */
 .iconButton:hover {
     background-color: #805f0a;
 }
-.pagination{
+
+.pagination {
     list-style-type: none;
     text-decoration: none;
 
-
 }
-.pagination li{
+
+.pagination li {
     display: inline;
-    padding:15px;
+    padding: 15px;
     font-family: 'Montserrat', sans-serif;
 }
+
 .pagination li a:active {
-    color:#39404d;
+    color: #39404d;
 }
+
 .pagination li a:visited {
-    color:#65717a;
+    color: #65717a;
     text-decoration: none;
 }
+
 a:active {
 
     font-weight: bold;
 }
-i{
+
+i {
     vertical-align: middle;
 }
-#addedIcon{
+
+#addedIcon {
     font-size: 50px;
     vertical-align: sub;
     padding-right: 20px;
 }
-#addIcon{
+
+#addIcon {
     vertical-align: sub;
     padding-right: 10px;
     font-size: 20px;
 }
-.PriceRange p{
+
+.PriceRange p {
     display: inline;
     color: #65717a;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
 }
-.PriceRange button{
-     color: #65717a;
-     font-family: 'Montserrat', sans-serif;
-     font-size: 13px;
- }
 
-.RangeInput{
+.PriceRange button {
+    color: #65717a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.RangeInput {
     width: 50px;
     margin: 5px;
 }
-.userHeaderForm{
-    color:#6e8195;
+
+.userHeaderForm {
+    color: #6e8195;
     border-bottom: 3px solid #6e8195;
+}
+
+.errorMessage {
+    font-family: 'Montserrat', sans-serif;
+    color: #ca0c0c;
+    padding: 0;
+    margin: 0;
+    height: 20px;
+}
+
+.error {
+    color: #ca0c0c;
+    font-size: 13px;
+}
+
+.usersList {
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+.usersList table {
+    width: 100%;
 }

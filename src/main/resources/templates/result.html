@@ -4,7 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
       layout:decorator="layout">
 <link rel="stylesheet" th:href="@{/css/main.css}"
-      href="../../css/main.css" />
+      href="../../css/main.css"/>
 
 
 <head>
@@ -14,23 +14,39 @@
 
 <body>
 <section layout:fragment="content">
-<div id="result">
+    <div id="result">
 
-    <div id="resulTitle"><h1><i class="material-icons" id="addedIcon">done</i>Product added:</h1></div>
-    <div id="resultConteiner">
-<table>
-    <tr><td><p th:text="'type:'"></p></td><td><p th:text="${product.type}"></p></td></tr>
-    <tr><td><p th:text="'type:'"></p></td><td><p th:text="${product.carat}"></p></td></tr>
-    <tr><td><p th:text="'id:'"></p></td><td><p th:text="${product.sn}"></p></td></tr>
-    <tr><td><p th:text="'price:'"></p></td><td><p th:text="${product.price}"></p></td></tr>
-    <tr><td><p th:text="'clarity:'"></p></td><td><p th:text="${product.clarity}"></p></td></tr>
-<!--<p th:text="'price: ' + ${product.price}"></p>-->
-<!--<p th:text="'type: ' + ${product.type}"></p>-->
-<!--<p th:text="'clarity:' + ${product.clarity}"></p>-->
-</table>
-    </div><p><a href="/add-product" id="addLink"><i class="material-icons" id="addIcon">add</i>Add next product</a></p>
+        <div id="resulTitle"><h1><i class="material-icons" id="addedIcon">done</i>Product added:</h1></div>
+        <div id="resultConteiner">
+            <table>
+                <tr>
+                    <td><p th:text="'type:'"></p></td>
+                    <td><p th:text="${product.type}"></p></td>
+                </tr>
+                <tr>
+                    <td><p th:text="'type:'"></p></td>
+                    <td><p th:text="${product.carat}"></p></td>
+                </tr>
+                <tr>
+                    <td><p th:text="'id:'"></p></td>
+                    <td><p th:text="${product.sn}"></p></td>
+                </tr>
+                <tr>
+                    <td><p th:text="'price:'"></p></td>
+                    <td><p th:text="${product.price}"></p></td>
+                </tr>
+                <tr>
+                    <td><p th:text="'clarity:'"></p></td>
+                    <td><p th:text="${product.clarity}"></p></td>
+                </tr>
+                <!--<p th:text="'price: ' + ${product.price}"></p>-->
+                <!--<p th:text="'type: ' + ${product.type}"></p>-->
+                <!--<p th:text="'clarity:' + ${product.clarity}"></p>-->
+            </table>
+        </div>
+        <p><a href="/add-product" id="addLink"><i class="material-icons" id="addIcon">add</i>Add next product</a></p>
 
-</div>
+    </div>
 </section>
 </body>
 </html>

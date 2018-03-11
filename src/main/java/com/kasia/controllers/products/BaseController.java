@@ -1,14 +1,17 @@
 package com.kasia.controllers.products;
 
 import com.kasia.domain.products.Product;
-import com.kasia.domain.products.ProductsPaged;
 import com.kasia.services.products.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Controller
@@ -32,11 +35,11 @@ public class BaseController {
         model.addAttribute("actualPage", products.getNumber());
         return "base";
     }
+
     @GetMapping("/range")
-    public String priceRange(@RequestParam(value = "downRange", required = false, defaultValue = "0")Integer downRange,
-                             @RequestParam(value = "upRange", required = false, defaultValue = "100000") Integer upRange,
-                             Model model)
-    {
+    public String priceRange(@RequestParam(value = "downRange", required = false, defaultValue = "0") BigDecimal downRange,
+                             @RequestParam(value = "upRange", required = false, defaultValue = "100000") BigDecimal upRange,
+                             Model model) {
         List<Product> products = productService.getProductListPriceRange(downRange, upRange);
         model.addAttribute("products", products);
 
@@ -46,7 +49,7 @@ public class BaseController {
 
     @RequestMapping(value = "/delete-product-by-id", method = RequestMethod.POST)
     public String deleteProduct(@RequestParam long id) {
-        Product deleteProduct= productService.findById(id);
+        Product deleteProduct = productService.findById(id);
         productService.decrementProductCounter(deleteProduct);
 //  productService.deleteById(id);
         return "redirect:/base";

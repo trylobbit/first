@@ -37,10 +37,12 @@
                 </td>
             </tr>
         </table>
-        <form class="PriceRange"  action="#" th:action="@{/range}"  method="get">
-        <p>Price range:</p><p><input  class="RangeInput" type="text"  name="downRange" th:value="*{downRange}"/></p>
-        <p>to:</p><p><input class="RangeInput" type="text"  name="upRange" th:value="*{upRange}" /></p>
-        <button  type="submit" name="Search" >Search </button>
+        <form class="PriceRange" action="#" th:action="@{/range}" method="get">
+            <p>Price range:</p>
+            <p><input class="RangeInput" type="text" name="downRange" th:value="*{downRange}"/></p>
+            <p>to:</p>
+            <p><input class="RangeInput" type="text" name="upRange" th:value="*{upRange}"/></p>
+            <button type="submit" name="Search">Search</button>
         </form>
 
     </div>
